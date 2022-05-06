@@ -25,8 +25,9 @@ public struct AJMessageConfig {
     
     
     init() {
-        let bundle = Bundle(for: AJMessage.self)
-        let url = bundle.resourceURL!.appendingPathComponent("AJMessage.bundle")
+        guard let url = Bundle.module.resourceURL else {
+            return
+        }
         let resourceBundle = Bundle(url: url)
         
         for status in AJMessage.Status.allCases {
@@ -42,6 +43,7 @@ public struct AJMessageConfig {
                 backgrounColors[status] = UIColor(red: CGFloat(46.0/255.0), green: CGFloat(204.0/255.0), blue: CGFloat(113.0/255.0), alpha: 1)
             }
         }
+        
     }
     
     

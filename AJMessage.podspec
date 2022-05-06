@@ -28,10 +28,10 @@ Pod::Spec.new do |s|
   s.swift_version    = '5'
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'Sources/AJMessage/**/*'
   
    s.resource_bundles = {
-     'AJMessage' => ['Assets/*.png']
+     'AJMessage' => ['Sources/AJMessage/Resources/*.png']
    }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
